@@ -31,12 +31,12 @@ public final class UrlUtil {
   
     /** 
      * @Title: getDataFromURL 
-     * @Description: ¸ù¾ÝURL¿çÓò»ñÈ¡Êä³ö½á¹û£¬Ö§³Öhttp 
+     * @Description: ï¿½ï¿½ï¿½URLï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½http 
      * @param strURL 
-     *            Òª·ÃÎÊµÄURLµØÖ· 
+     *            Òªï¿½ï¿½ï¿½Êµï¿½URLï¿½ï¿½Ö· 
      * @param param 
-     *            ²ÎÊý 
-     * @return ½á¹û×Ö·û´® 
+     *            ï¿½ï¿½ï¿½ï¿½ 
+     * @return ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ 
      * @throws Exception 
      */  
     public static String getDataFromURL(String strURL, Map<String, String> param) throws Exception {  
@@ -45,16 +45,16 @@ public final class UrlUtil {
         conn.setDoOutput(true);  
   
         OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());  
-        final StringBuilder sb = new StringBuilder(param.size() << 4); // 4´Î·½  
+        final StringBuilder sb = new StringBuilder(param.size() << 4); // 4ï¿½Î·ï¿½  
         final Set<String> keys = param.keySet();  
         for (final String key : keys) {  
             final String value = param.get(key);  
-            sb.append(key); // ²»ÄÜ°üº¬ÌØÊâ×Ö·û  
+            sb.append(key); // ï¿½ï¿½ï¿½Ü°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½  
             sb.append('=');  
             sb.append(value);  
             sb.append('&');  
         }  
-        // ½«×îºóµÄ '&' È¥µô  
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ '&' È¥ï¿½ï¿½  
         sb.deleteCharAt(sb.length() - 1);  
         writer.write(sb.toString());  
         writer.flush();  
@@ -74,12 +74,12 @@ public final class UrlUtil {
   
     /** 
      * @Title: postMethod 
-     * @Description: ¸ù¾ÝURL¿çÓò»ñÈ¡Êä³ö½á¹û£¬Ö§³Öhttps 
+     * @Description: ï¿½ï¿½ï¿½URLï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½https 
      * @param url 
-     *            Òª·ÃÎÊµÄURLµØÖ·(http://www.xxx.com?) 
+     *            Òªï¿½ï¿½ï¿½Êµï¿½URLï¿½ï¿½Ö·(http://www.xxx.com?) 
      * @param urlParm 
-     *            ²ÎÊý(id=1212&pwd=2332) 
-     * @return ½á¹û×Ö·û´® 
+     *            ï¿½ï¿½ï¿½ï¿½(id=1212&pwd=2332) 
+     * @return ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ 
      */  
   /*  public static String postMethod(String url, String urlParm) {  
         if (null == url || "".equals(url)) {  
@@ -118,7 +118,7 @@ public final class UrlUtil {
         PostMethod postMethod = new PostMethod(url);  
         StringRequestEntity requestEntity = new StringRequestEntity(json, "application/json", "UTF-8");  
         postMethod.setRequestEntity(requestEntity);  
-         ·¢ËÍÇëÇó£¬²¢»ñÈ¡ÏìÓ¦¶ÔÏó   
+         ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó£¬²ï¿½ï¿½ï¿½È¡ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½   
         int statusCode = httpClient.executeMethod(postMethod);  
         String result = null;  
         if (statusCode == HttpStatus.SC_OK) {  
@@ -196,9 +196,8 @@ public final class UrlUtil {
     public static void main(String[] args) throws Exception {  
         String url = "http://xy2.gm.163.com/cgi-bin/csa/csa_sprite.py";  
         Map<String, String> map = new HashMap<String, String>();  
-        
         map.put("act","ask");
-        map.put("question","Ò»ÉúÓÐÄã");
+        map.put("question","ä»Šå¤©å‘¨å‡ ");
         map.put("product_name","xy2");
         String msg = post(url, map);  
         
